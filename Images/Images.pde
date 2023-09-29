@@ -23,7 +23,7 @@ void setup() {
 } //End setup
 //
 void draw() {
-  //image();
+  image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 } //End draw
 //
 void keyPressed() {} //End keyPressed
