@@ -1,6 +1,7 @@
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
+PImage picBackground;
 //
 void setup() {
   //fullScreen(); //displayWidth, displayHeight
