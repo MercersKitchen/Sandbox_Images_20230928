@@ -8,6 +8,11 @@ void setup() {
   appWidth = width;
   appHeight = height;
   //
+  //Population
+  //
+  //DIVs
+  rect();
+  //
 } //End setup
 //
 void draw() {
