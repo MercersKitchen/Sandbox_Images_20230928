@@ -1,5 +1,6 @@
 //Global Variables
 int appWidth, appHeight;
+float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
 //
 void setup() {
   //fullScreen(); //displayWidth, displayHeight
@@ -9,10 +10,10 @@ void setup() {
   appHeight = height;
   //
   //Population
-  backgroundImageX = ;
-  backgroundImageY = ;
-  backgroundImageWidth = ;
-  backgroundImageHeight = ;
+  backgroundImageX = appWidth*0;
+  backgroundImageY = appHeight*0;
+  backgroundImageWidth = appWidth-1;
+  backgroundImageHeight = appHeight-1;
   //
   //DIVs
   rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
