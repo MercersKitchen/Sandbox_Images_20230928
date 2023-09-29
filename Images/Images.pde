@@ -9,6 +9,10 @@ void setup() {
   appHeight = height;
   //
   //Population
+  backgroundImageX = ;
+  backgroundImageY = ;
+  backgroundImageWidth = ;
+  backgroundImageHeight = ;
   //
   //DIVs
   rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
