@@ -11,7 +11,7 @@ void setup() {
   //Population
   //
   //DIVs
-  rect();
+  rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   //
 } //End setup
 //
