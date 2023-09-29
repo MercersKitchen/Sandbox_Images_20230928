@@ -1,8 +1,18 @@
 //Global Variables
+int appWidth, appHeight;
 //
-void setup() {} //ENd setup
+void setup() {
+  //fullScreen(); //displayWidth, displayHeight
+  size( 500, 100 ); //Landscape
+  // Copy Display Orientation
+  appWidth = width;
+  appHeight = height;
+  //
+} //End setup
 //
-void draw() {} //End draw
+void draw() {
+  //image();
+} //End draw
 //
 void keyPressed() {} //End keyPressed
 //
