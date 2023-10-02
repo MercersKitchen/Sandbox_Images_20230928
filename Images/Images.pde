@@ -29,7 +29,11 @@ void draw() {
   //
   //if ( [BRIGHTNESS, see keyPressed] ) tint (255, 128); //Gray Scale: 1/2 tint (i.e 128/256=1/2)
   if ( nightmode==true ) tint ( 64, 64, 40 ); //Gray Scale: 1/2 tint (i.e 128/256=1/2)
-  if () {} else {}
+  if ( nightmode==true ) {
+    tint ( 64, 64, 40 );
+  } else {
+    noTint(); //See Processing DOC
+  }
   image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 } //End draw
 //
@@ -37,7 +41,7 @@ void keyPressed() {
   //Brightness
   //
   if ( key=='n' || key=='N' ) { //Nightmode, basic control is Boolean
-    if ( nightmode==true ) { 
+    if ( nightmode==true ) {
       nightmode = false;
     } else {
       nightmode = true;
