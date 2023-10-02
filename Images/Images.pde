@@ -5,7 +5,7 @@ PImage picBackground;
 //
 void setup() {
   //fullScreen(); //displayWidth, displayHeight
-  size( 500, 100 ); //Landscape
+  size( 800, 600 ); //Landscape
   // Copy Display Orientation
   appWidth = width;
   appHeight = height;
@@ -23,6 +23,7 @@ void setup() {
 } //End setup
 //
 void draw() {
+  tint (255, 128); //Gray Scale: 1/2 tint (i.e 128/256=1/2)
   image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 } //End draw
 //
