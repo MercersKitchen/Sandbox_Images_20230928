@@ -27,16 +27,23 @@ void draw() {
   //background(255); //builti in BUG, 1 pixel
   rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   //
-  //if (  ) tint (255, 128); //Gray Scale: 1/2 tint (i.e 128/256=1/2)
+  //if ( [BRIGHTNESS, see keyPressed] ) tint (255, 128); //Gray Scale: 1/2 tint (i.e 128/256=1/2)
   if ( nightmode==true ) tint ( 64, 64, 40 ); //Gray Scale: 1/2 tint (i.e 128/256=1/2)
+  if () {} else {}
   image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 } //End draw
 //
 void keyPressed() {
   //Brightness
   //
-  //Nightmode, basic control is Boolean
-  
+  if ( key=='n' || key=='N' ) { //Nightmode, basic control is Boolean
+    if ( nightmode==true ) { 
+      nightmode = false;
+    } else {
+      nightmode = true;
+    }
+  }
+
   //
 } //End keyPressed
 //
