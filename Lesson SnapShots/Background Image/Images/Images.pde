@@ -15,15 +15,20 @@ void setup() {
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
   backgroundImageHeight = appHeight-1;
-  picBackground = loadImage("../imagesUsed/Landscape & Square Images/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
+  picBackground = loadImage("../../../imagesUsed/Landscape & Square Images/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
   //
   //DIVs
   rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   //
+  //Draw Image One Time, for testing
+  //image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 } //End setup
 //
 void draw() {
-  image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
+  //draw image 60 times per second
+  background(255); //built in BUG, we will explore this BUG on
+  //Brightness and Nightmode control
+  //image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 } //End draw
 //
 void keyPressed() {} //End keyPressed
