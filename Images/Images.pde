@@ -1,8 +1,12 @@
+/* Program Notes
+- Finish Nightmode: medium and difficult
+*/
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
 PImage picBackground;
 Boolean nightmode=false; //Note: clock and turn on automatically
+Boolean brightnessControl=false; //Note: ARROWS
 //
 void setup() {
   //fullScreen(); //displayWidth, displayHeight
