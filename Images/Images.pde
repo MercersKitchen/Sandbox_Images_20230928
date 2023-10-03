@@ -7,6 +7,7 @@ float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageH
 PImage picBackground;
 Boolean nightmode=false; //Note: clock and turn on automatically
 Boolean brightnessControl=false; //Note: ARROWS
+int brightnessNumber=255; //Range:1-255
 //
 void setup() {
   //fullScreen(); //displayWidth, displayHeight
