@@ -1,6 +1,6 @@
 /* Program Notes
-- Finish Nightmode: medium and difficult
-*/
+ - Finish Nightmode: medium and difficult
+ */
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
@@ -45,14 +45,18 @@ void draw() {
 } //End draw
 //
 void keyPressed() {
-  //Brightness
-  //
   if ( key=='n' || key=='N' ) { //Nightmode, basic control is Boolean
     if ( nightmode==true ) {
       nightmode = false;
     } else {
       nightmode = true;
     }
+  }
+  //Brightness: ARROWS activate brightnessControl, never off
+  //NOTE: Nightmode does turn off
+  if ( [Special Key Bind] ) { //Brightness keybind
+    brightnessControl = true;
+    //CONTINUE HERE with brightness toggles
   }
   //
 } //End keyPressed
