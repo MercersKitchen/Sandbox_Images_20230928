@@ -31,7 +31,7 @@ void draw() {
   //background(255); //built in BUG, 1 pixel
   rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   //
-  //if ( [BRIGHTNESS, see keyPressed] ) tint (255, 128); //Gray Scale: 1/2 tint (i.e 128/256=1/2)
+  if ( brightnessControl==true ) tint (255, brightnessNumber); //Gray Scale: 1/2 tint (i.e 128/256=1/2)
   //if ( nightmode==true ) tint ( 64, 64, 40 ); //Gray Scale: 1/2 tint (i.e 128/256=1/2)
   if ( nightmode==true ) {
     tint ( 64, 64, 40 );
