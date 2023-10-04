@@ -54,8 +54,10 @@ void keyPressed() {
   }
   //Brightness: ARROWS activate brightnessControl, never off
   //NOTE: Nightmode does turn off
-  if ( [Special Key Bind] ) { //Brightness keybind
+  if ( key==CODED && keyCode=UP || keyCode==DOWN ) { //Brightness keybind
     brightnessControl = true;
+    if ( key==CODED && keyCode==UP ) brightnessNumber++ ; //brightnessNumber+=1 //brightnessNumber = brightnessNumber+1
+    if ( key==CODED && keyCode==DOWN ) ;
     //CONTINUE HERE with brightness toggles
   }
   //
