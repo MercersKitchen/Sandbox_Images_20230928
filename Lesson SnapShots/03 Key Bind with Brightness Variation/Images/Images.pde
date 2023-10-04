@@ -1,6 +1,3 @@
-/* Program Notes
- - Finish Nightmode: medium and difficult
- */
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
@@ -21,7 +18,7 @@ void setup() {
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
   backgroundImageHeight = appHeight-1;
-  picBackground = loadImage("../imagesUsed/Landscape & Square Images/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
+  picBackground = loadImage("../../../imagesUsed/Landscape & Square Images/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
   //
   //DIVs
   //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
@@ -32,7 +29,7 @@ void draw() {
   //background(255); //built in BUG, 1 pixel
   rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   //
-  println(brightnessControl, nightmode);
+  println(brightnessControl, nightmode, brightnessNumber);
   if ( brightnessControl==true )
   { //Gray Scale: 1/2 tint (i.e 128/256=1/2)
     if ( brightnessNumber<1 ) {
@@ -43,15 +40,12 @@ void draw() {
       //Empty ELSE
     }
     tint (255, brightnessNumber);
-    println(brightnessNumber);
   }
   //if ( nightmode==true ) tint ( 64, 64, 40 ); //Gray Scale: 1/2 tint (i.e 128/256=1/2)
   if ( nightmode==true ) {
     tint ( 64, 64, 40 );
-    //println(nightmode);
   } else {
     noTint(); //See Processing DOC
-    //println(nightmode);
   }
   image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
 } //End draw
@@ -73,7 +67,6 @@ void keyPressed() {
     //CONTINUE HERE with brightness toggles
   }
   //
-  println(brightnessNumber);
 } //End keyPressed
 //
 void mousePressed() {
