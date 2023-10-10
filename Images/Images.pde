@@ -4,7 +4,7 @@
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
-PImage picBackground, bikeForeground;
+PImage picBackground, bikeForeground, darthVaderPortrait;
 Boolean nightmode=false; //Note: clock will automatically turn on
 Boolean brightnessControl=false; //Note: ARROWS
 int brightnessNumber=128; //Range:1-255
@@ -36,9 +36,13 @@ void setup() {
   String imagesPath = up + open;
   String landScapeImage = "imagesUsed/Landscape & Square Images/";
   picBackground = loadImage( imagesPath + landScapeImage + "Obi-wan-star-wars-jedi-23864621-800-600.jpg");
+  bikeForeground = loadImage();
+  darthVaderPortrait = loadImage();
   //
   //DIVs
   //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
+  rect(); //bike image
+  rect(); //Darth Image
   //
 } //End setup
 //
