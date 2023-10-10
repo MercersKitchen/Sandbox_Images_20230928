@@ -33,7 +33,7 @@ void setup() {
   //Concatenation of Pathways
   String up = "..";
   String open = "/";
-  String imagesPath = up + open + up + open + up + open;
+  String imagesPath = up + open;
   String landScapeImage = "imagesUsed/Landscape & Square Images/";
   picBackground = loadImage( imagesPath + landScapeImage + "Obi-wan-star-wars-jedi-23864621-800-600.jpg");
   //
@@ -46,7 +46,7 @@ void draw() {
   //background(255); //built in BUG, 1 pixel
   rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   //
-  println(brightnessControl, nightmode);
+  //println(brightnessControl, nightmode);
   if ( brightnessControl==true )
   { //Gray Scale: 1/2 tint (i.e 128/256=1/2)
     if ( brightnessNumber<1 ) {
@@ -57,17 +57,19 @@ void draw() {
       //Empty ELSE
     }
     tint (255, brightnessNumber);
-    println(brightnessNumber);
+    //println(brightnessNumber);
   }
   //if ( nightmode==true ) tint ( 64, 64, 40 ); //Gray Scale: 1/2 tint (i.e 128/256=1/2)
   if ( nightmode==true ) {
-    tint ( 64, 64, 40 );
+    tint ( 64, 64, 40 ); //Blue Light must be limited, i.e. <40
     //println(nightmode);
   } else {
     noTint(); //See Processing DOC
     //println(nightmode);
   }
   image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
+  image( bikeForeground, ); //bike image, purpose: see circles in aspect ratio
+  image(); //Darth Vader in Portrait, geometry is landscape, thus centered
 } //End draw
 //
 void keyPressed() {
@@ -82,6 +84,7 @@ void keyPressed() {
   //NOTE: Nightmode does turn off
   if ( key==CODED && keyCode==UP || keyCode==DOWN ) { //Brightness keybind
     brightnessControl = true;
+    //Builtin BUG, use Boolean to draw() formulae instead
     if ( key==CODED && keyCode==UP ) brightnessNumber++ ; //brightnessNumber+=1 //brightnessNumber = brightnessNumber+1
     if ( key==CODED && keyCode==DOWN ) brightnessNumber-- ; //brightnessNumber-=1
     //CONTINUE HERE with brightness toggles
