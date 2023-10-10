@@ -4,7 +4,7 @@
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
-PImage picBackground;
+PImage picBackground, bikeForeground;
 Boolean nightmode=false; //Note: clock will automatically turn on
 Boolean brightnessControl=false; //Note: ARROWS
 int brightnessNumber=128; //Range:1-255
@@ -69,7 +69,7 @@ void draw() {
   }
   image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   image( bikeForeground, ); //bike image, purpose: see circles in aspect ratio
-  image(); //Darth Vader in Portrait, geometry is landscape, thus centered
+  image( darthVaderPortrait, ); //Darth Vader in Portrait, geometry is landscape, thus centered
 } //End draw
 //
 void keyPressed() {
