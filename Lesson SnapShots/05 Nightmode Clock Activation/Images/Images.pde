@@ -25,7 +25,12 @@ void setup() {
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
   backgroundImageHeight = appHeight-1;
-  picBackground = loadImage("../../../imagesUsed/Landscape & Square Images/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
+  //Concatenation of Pathways
+  String up = "..";
+  String open = "/";
+  String imagesPath = up + open + up + open + up + open;
+  String landScapeImage = "imagesUsed/Landscape & Square Images/";
+  picBackground = loadImage( imagesPath + landScapeImage + "Obi-wan-star-wars-jedi-23864621-800-600.jpg");
   //
   //DIVs
   //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
