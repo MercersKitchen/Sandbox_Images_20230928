@@ -40,6 +40,17 @@ void setup() {
   darthY = appHeight*5/8;
   darthWidth = bikeWidth;
   darthHeight = bikeHeight;
+  //Aspect Ratio Calculations
+  //Determine Aspect Ratio
+  //Compare dimension to get larger dimension
+  //Calculate Smaller Dimension
+  //Rewrite Variables based on rect() vars
+  obiImageWidth = ;
+  obiImageHeight = ;
+  bikeImageWidth = ;
+  bikeImageHeight =  ;
+  darthImageWidth = ;
+  darthImageHeight = ;
   //Concatenation of Pathways
   String up = "..";
   String open = "/";
