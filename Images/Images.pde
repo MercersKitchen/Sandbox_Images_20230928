@@ -32,8 +32,14 @@ void setup() {
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
   backgroundImageHeight = appHeight-1;
-  bikeX, bikeY, bikeWidth, bikeHeight
-  darthX, darthY, darthWidth, darthHeight
+  bikeX = appWidth*1/14;
+  bikeY = appHeight*1/8;
+  bikeWidth = appWidth*1/7; // 2/14
+  bikeHeight = appHeight*1/4; // 2/8
+  darthX = bikeX;
+  darthY = appHeight*5/8;
+  darthWidth = bikeWidth;
+  darthHeight = bikeHeight;
   //Concatenation of Pathways
   String up = "..";
   String open = "/";
