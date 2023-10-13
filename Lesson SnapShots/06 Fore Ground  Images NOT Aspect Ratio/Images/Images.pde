@@ -41,7 +41,7 @@ void setup() {
   darthWidth = bikeWidth;
   darthHeight = bikeHeight;
   //Concatenation of Pathways
-  String up = "..";
+  String up = "../../../";
   String open = "/";
   String imagesPath = up + open;
   String landScapeImage = "imagesUsed/Landscape & Square Images/";
