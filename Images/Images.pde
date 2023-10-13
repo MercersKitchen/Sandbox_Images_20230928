@@ -4,6 +4,8 @@
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
+float bikeX, bikeY, bikeWidth, bikeHeight;
+float darthX, darthY, darthWidth, darthHeight;
 PImage picBackground, bikeForeground, darthVaderPortrait;
 Boolean nightmode=false; //Note: clock will automatically turn on
 Boolean brightnessControl=false; //Note: ARROWS
@@ -30,6 +32,8 @@ void setup() {
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
   backgroundImageHeight = appHeight-1;
+  bikeX, bikeY, bikeWidth, bikeHeight
+  darthX, darthY, darthWidth, darthHeight
   //Concatenation of Pathways
   String up = "..";
   String open = "/";
