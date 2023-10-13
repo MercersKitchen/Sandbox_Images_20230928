@@ -36,13 +36,13 @@ void setup() {
   String imagesPath = up + open;
   String landScapeImage = "imagesUsed/Landscape & Square Images/";
   picBackground = loadImage( imagesPath + landScapeImage + "Obi-wan-star-wars-jedi-23864621-800-600.jpg");
-  bikeForeground = loadImage();
-  darthVaderPortrait = loadImage();
+  //bikeForeground = loadImage();
+  //darthVaderPortrait = loadImage();
   //
   //DIVs
   //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-  rect(); //bike image
-  rect(); //Darth Image
+  rect( bikeX, bikeY, bikeWidth, bikeHeight ); //bike image
+  //rect(); //Darth Image
   //
 } //End setup
 //
@@ -72,8 +72,8 @@ void draw() {
     //println(nightmode);
   }
   image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-  image( bikeForeground, ); //bike image, purpose: see circles in aspect ratio
-  image( darthVaderPortrait, ); //Darth Vader in Portrait, geometry is landscape, thus centered
+  //image( bikeForeground, ); //bike image, purpose: see circles in aspect ratio
+  //image( darthVaderPortrait, ); //Darth Vader in Portrait, geometry is landscape, thus centered
 } //End draw
 //
 void keyPressed() {
