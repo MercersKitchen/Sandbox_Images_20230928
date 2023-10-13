@@ -34,7 +34,7 @@ void setup() {
   backgroundImageHeight = appHeight-1;
   bikeX = appWidth*1/14;
   bikeY = appHeight*1/8;
-  bikeWidth = appWidth*1/7; // 2/14
+  bikeWidth = appWidth*2.25/7;
   bikeHeight = appHeight*1/4; // 2/8
   darthX = bikeX;
   darthY = appHeight*5/8;
@@ -45,14 +45,17 @@ void setup() {
   String open = "/";
   String imagesPath = up + open;
   String landScapeImage = "imagesUsed/Landscape & Square Images/";
-  picBackground = loadImage( imagesPath + landScapeImage + "Obi-wan-star-wars-jedi-23864621-800-600.jpg");
-  //bikeForeground = loadImage();
-  //darthVaderPortrait = loadImage();
+  String obiImage = "Obi-wan-star-wars-jedi-23864621-800-600.jpg";
+  String bikeImage = "bike.jpg";
+  String darthImage  = "10-star-wars-darth-vader-portrait-wallpaper-1-325x485.jpg";
+  picBackground = loadImage( imagesPath + landScapeImage + obiImage ); //Concatenation
+  bikeForeground = loadImage();
+  darthVaderPortrait = loadImage();
   //
   //DIVs
   //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-  rect( bikeX, bikeY, bikeWidth, bikeHeight ); //bike image
-  rect( darthX, darthY, darthWidth, darthHeight ); //Darth Image
+  //rect( bikeX, bikeY, bikeWidth, bikeHeight ); //bike image
+  //rect( darthX, darthY, darthWidth, darthHeight ); //Darth Image
   //
 } //End setup
 //
@@ -82,8 +85,9 @@ void draw() {
     //println(nightmode);
   }
   image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-  //image( bikeForeground, ); //bike image, purpose: see circles in aspect ratio
-  //image( darthVaderPortrait, ); //Darth Vader in Portrait, geometry is landscape, thus centered
+  //rect( darthX, darthY, darthWidth, darthHeight ); //Darth Image
+  image( bikeForeground, bikeX, bikeY, bikeWidth, bikeHeight ); //bike image, purpose: see circles in aspect ratio
+  image( darthVaderPortrait, darthX, darthY, darthWidth, darthHeight ); //Darth Vader in Portrait, geometry is landscape, thus centered
 } //End draw
 //
 void keyPressed() {
