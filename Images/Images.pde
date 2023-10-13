@@ -42,7 +42,7 @@ void setup() {
   //DIVs
   //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   rect( bikeX, bikeY, bikeWidth, bikeHeight ); //bike image
-  //rect(); //Darth Image
+  rect( darthX, darthY, darthWidth, darthHeight ); //Darth Image
   //
 } //End setup
 //
