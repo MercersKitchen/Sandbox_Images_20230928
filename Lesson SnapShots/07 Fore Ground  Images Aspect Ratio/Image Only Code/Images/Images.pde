@@ -36,11 +36,19 @@ void setup() {
   darthHeight = 485;
   float aspectRatio = 0.0; //Local Variable
   float rectDimaensionMemory = 0.0; //Assigned ZERO b/c IF'
-  if ( bikeWidth > bikeHeight ) { //BIKE Image if Landscape
+  if ( bikeWidth >= bikeHeight ) { //BIKE Image if Landscape
+    //Comparison Verification
+    println("BIKE is Landscape");
   } else { //BIKE Image if Portrait
+    //Comparison Verification
+    println("BIKE is Portrait");
   } //End IF
-  if ( darthWidth > darthHeight ) {
-  } else {
+  if ( darthWidth > darthHeight ) { //DARTH Image if Landscape
+    //Comparison Verification
+    println("DARTH is Landscape");
+  } else { //DARTH Image if Portrait
+    //Comparison Verification
+    println("DARTH is Portrait");
   } //End IF
   //Origonal Aspect Ratios of Images to Change
   //Compare the side Lengths to see which is bigger
