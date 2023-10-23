@@ -17,6 +17,10 @@ void setup() {
   //
   //Population
   // DIV rect() Variable Population
+  //Origonal Aspect Ratios of Images to Change
+  //Compare the side Lengths to see which is bigger
+  //"Compress" the biggest side into the rect()
+  //Multiple the Image's Aspect Ratio to the smaller side
   backgroundImageX = appWidth*0;
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
@@ -37,23 +41,26 @@ void setup() {
   float rectDimaensionMemory = 0.0; //Assigned ZERO b/c IF'
   if ( bikeWidth >= bikeHeight ) { //BIKE Image if Landscape
     //Comparison Verification
-    aspectRatio = bikeHeight / bikeWidth; // smaller/large=0 if int, use casting
+    aspectRatio = float(bikeHeight) / float(bikeWidth); // smaller/large=0 if int, use casting
+    //memory of smaller side
+    bikeWidth = bikeWidthRect;
+    bikeHeight = aspectRatio * bikeWidth;
     println("BIKE is Landscape");
   } else { //BIKE Image if Portrait
     //Comparison Verification
     println("BIKE is Portrait");
+    //Repeat Aspect Ratio
   } //End IF
   if ( darthWidth > darthHeight ) { //DARTH Image if Landscape
     //Comparison Verification
     println("DARTH is Landscape");
+    //Repeat Aspect Ratio
   } else { //DARTH Image if Portrait
     //Comparison Verification
     println("DARTH is Portrait");
+    //Repeat Aspect Ratio
   } //End IF
-  //Origonal Aspect Ratios of Images to Change
-  //Compare the side Lengths to see which is bigger
-  //"Compress" the biggest side into the rect()
-  //Multiple the Image's Aspect Ratio to the smaller side
+  //Error Check of Smaller Dimension
   //
   //Concatenation of Pathways
   String up = "..";
