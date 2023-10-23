@@ -34,6 +34,14 @@ void setup() {
   bikeHeight = 529;
   darthWidth = 352;
   darthHeight = 485;
+  float aspectRatio = 0.0; //Local Variable
+  float rectDimaensionMemory = 0.0; //Assigned ZERO b/c IF'
+  if ( bikeWidth > bikeHeight ) { //BIKE Image if Landscape
+  } else { //BIKE Image if Portrait
+  } //End IF
+  if ( darthWidth > darthHeight ) {
+  } else {
+  } //End IF
   //Origonal Aspect Ratios of Images to Change
   //Compare the side Lengths to see which is bigger
   //"Compress" the biggest side into the rect()
