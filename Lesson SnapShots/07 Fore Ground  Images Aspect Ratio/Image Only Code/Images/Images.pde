@@ -37,6 +37,7 @@ void setup() {
   float rectDimaensionMemory = 0.0; //Assigned ZERO b/c IF'
   if ( bikeWidth >= bikeHeight ) { //BIKE Image if Landscape
     //Comparison Verification
+    aspectRatio = bikeHeight / bikeWidth; // smaller/large=0 if int, use casting
     println("BIKE is Landscape");
   } else { //BIKE Image if Portrait
     //Comparison Verification
