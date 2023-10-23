@@ -30,6 +30,10 @@ void setup() {
   darthWidth = bikeWidth;
   darthHeight = bikeHeight;
   //Aspect Ratio Change
+  bikeWidth = 860; //hardcode of image file
+  bikeHeight = 529;
+  darthWidth = 352;
+  darthHeight = 485;
   //Origonal Aspect Ratios of Images to Change
   //Compare the side Lengths to see which is bigger
   //"Compress" the biggest side into the rect()
