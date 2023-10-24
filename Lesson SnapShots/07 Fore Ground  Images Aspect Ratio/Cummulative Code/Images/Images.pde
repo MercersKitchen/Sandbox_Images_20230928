@@ -4,8 +4,8 @@
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
-float bikeX, bikeY, bikeWidth, bikeHeight;
-float darthX, darthY, darthWidth, darthHeight;
+float bikeXrect, bikeYrect, bikeWidthRect, bikeHeightRect, bikeWidth, bikeHeight;
+float darthXrect, darthYrect, darthWidthRect, darthHeightRect, darthWidth, darthHeight;
 PImage picBackground, bikeForeground, darthVaderPortrait;
 Boolean nightmode=false; //Note: clock will automatically turn on
 Boolean brightnessControl=false; //Note: ARROWS
@@ -19,79 +19,81 @@ void setup() {
   appHeight = height;
   //
   //Population
-  int hourNightMode = hour(); //24-hour clock
-  println(hourNightMode);
-  if ( hourNightMode>17 ) {
-    nightmode=true;
-  } else if ( hourNightMode<05 ) {
-    nightmode=true;
-  } else {
-    nightmode=false;
-  }
-  // DIV rect() Variable Population
-  backgroundImageX = appWidth*0;
-  backgroundImageY = appHeight*0;
-  backgroundImageWidth = appWidth-1;
-  backgroundImageHeight = appHeight-1;
-  bikeX = appWidth*1/14;
-  bikeY = appHeight*1/8;
-  bikeWidth = appWidth*2.25/7;
-  bikeHeight = appHeight*1/4; // 2/8
-  darthX = bikeX;
-  darthY = appHeight*5/8;
-  darthWidth = bikeWidth;
-  darthHeight = bikeHeight;
-  //
+  //DIV rect() Variable Population
   //Origonal Aspect Ratios of Images to Change
   //Compare the side Lengths to see which is bigger
   //"Compress" the biggest side into the rect()
   //Multiple the Image's Aspect Ratio to the smaller side
-  //
-  // CONTINUE HERE
+  backgroundImageX = appWidth*0;
+  backgroundImageY = appHeight*0;
+  backgroundImageWidth = appWidth-1;
+  backgroundImageHeight = appHeight-1;
   bikeXrect = appWidth*1/14;
   bikeYrect = appHeight*1/8;
   bikeWidthRect = appWidth*2.25/7;
   bikeHeightRect = appHeight*1/4; // 2/8
-  darthXrect rect = appHeight*5/8;
-  darthWidthRect = bikeWidth;
-  darthHeightRect = bikeHeight;
+  darthXrect = bikeXrect;
+  darthYrect = appHeight*5/8;
+  darthWidthRect = bikeWidthRect;
+  darthHeightRect = bikeHeightRect;
   //Aspect Ratio Change
-  bikeWidth = 860; //hardcode of image file
-  bikeHeight = 529; //from Image File
-  darthWidth = 352; //from Image File
-  darthHeight = 485; //from Image File
+  bikeWidth = 860.0;//hardcode of image file
+  bikeHeight = 529.0; //from Image File
+  darthWidth = 352.0; //from Image File
+  darthHeight = 485.0; //from Image File
   float aspectRatio = 0.0; //Local Variable
-  float rectDimaensionMemory = 0.0; //Assigned ZERO b/c IF'
   if ( bikeWidth >= bikeHeight ) { //BIKE Image if Landscape
     //Comparison Verification
-    aspectRatio = float(bikeHeight) / float(bikeWidth); // smaller/large=0 if int, use casting
+    println("BIKE is Landscape");
+    aspectRatio = bikeHeight / bikeWidth; // smaller/large=0 if int, use casting
     //memory of smaller side
     bikeWidth = bikeWidthRect;
     bikeHeight = aspectRatio * bikeWidth;
-    println("BIKE is Landscape");
+    if ( bikeHeight > bikeHeightRect ) { //ERROR Catch is bikeHeight > bikeHeightRect
+      println("ERROR: Aspect Calculation Too Big!", "\tCalculated Image Height:", bikeHeight, "\n\t\t\t\t\t\t & Actual rect() Height:", bikeHeightRect);
+    }
   } else { //BIKE Image if Portrait
     //Comparison Verification
     println("BIKE is Portrait");
     //Repeat Aspect Ratio
+    //Comparison Verification
+    aspectRatio = bikeWidth / bikeHeight; // smaller/large=0 if int, use casting
+    //memory of smaller side
+    bikeHeight = bikeHeightRect;
+    bikeWidth = aspectRatio * bikeHeight;
+    if ( bikeWidth > bikeWidthRect ) { //ERROR Catch is bikeHeightRect > bikeHeight
+      println("ERROR: Aspect Calcualtion Too Big");
+    }
   } //End IF
-  if ( darthWidth > darthHeight ) { //DARTH Image if Landscape
+  if ( darthWidth >= darthHeight ) { //DARTH Image if Landscape
     //Comparison Verification
     println("DARTH is Landscape");
     //Repeat Aspect Ratio
+    aspectRatio = darthHeight / darthWidth; // smaller/large=0 if int, use casting
+    //memory of smaller side
+    darthWidth = darthWidthRect;
+    darthHeight = aspectRatio * darthWidth;
+    if ( darthHeight > darthHeightRect ) { //ERROR Catch is bikeHeight > bikeHeightRect
+      println("ERROR: Aspect Calcualtion Too Big");
+    }
   } else { //DARTH Image if Portrait
     //Comparison Verification
     println("DARTH is Portrait");
     //Repeat Aspect Ratio
+    aspectRatio = darthWidth / darthHeight; // smaller/large=0 if int, use casting
+    //memory of smaller side
+    darthHeight = darthHeightRect;
+    darthWidth = aspectRatio * darthHeight;
+    if ( darthWidth > darthWidthRect ) { //ERROR Catch is darthHeightRect > darthHeight
+      println("ERROR: Aspect Calcualtion Too Big");
+    }
   } //End IF
   //Error Check of Smaller Dimension
   //
-  //
-  //
-  //
   //Concatenation of Pathways
-  String up = "../../../";
+  String up = "..";
   String open = "/";
-  String imagesPath = up + open;
+  String imagesPath = up + open + up + open + up + open + up + open;
   String landScapeImage = "imagesUsed/Landscape & Square Images/";
   String portraitImage = "imagesUsed/Portrait/";
   String obiImage = "Obi-wan-star-wars-jedi-23864621-800-600.jpg";
@@ -99,12 +101,12 @@ void setup() {
   String darthImage  = "10-star-wars-darth-vader-portrait-wallpaper-1-325x485.jpg";
   picBackground = loadImage( imagesPath + landScapeImage + obiImage ); //Concatenation
   bikeForeground = loadImage( imagesPath + landScapeImage + bikeImage );
-  darthVaderPortrait = loadImage( imagesPath + portraitImage + darthImage );
+  darthVaderPortrait = loadImage( imagesPath + portraitImage + darthImage);
   //
   //DIVs
   //rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-  //rect( bikeX, bikeY, bikeWidth, bikeHeight ); //bike image
-  //rect( darthX, darthY, darthWidth, darthHeight ); //Darth Image
+  //rect( bikeXrect, bikeYrect, bikeWidthRect, bikeHeightRect ); //bike image
+  //rect( darthXrect, darthYrect, darthWidthRect, darthHeightRect ); //Darth Image
   //
 } //End setup
 //
@@ -134,8 +136,11 @@ void draw() {
     //println(nightmode);
   }
   image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-  image( bikeForeground, bikeX, bikeY, bikeWidth, bikeHeight ); //bike image, purpose: see circles in aspect ratio
-  image( darthVaderPortrait, darthX, darthY, darthWidth, darthHeight ); //Darth Vader in Portrait, geometry is landscape, thus centered
+  //NOTE: bike image is too big for rect(), even aspect ratio calculation (see origonal image)
+  image( bikeForeground, bikeXrect, bikeYrect, bikeWidth, bikeHeight ); //bike image, purpose: see circles in aspect ratio
+  //NOTE: how would this image be centered or justified (left or right)
+  rect( darthXrect, darthYrect, darthWidthRect, darthHeightRect ); //Darth Image
+  image( darthVaderPortrait, darthXrect, darthYrect, darthWidth, darthHeight ); //Darth Vader in Portrait, geometry is landscape, thus centered
 } //End draw
 //
 void keyPressed() {

@@ -1,5 +1,6 @@
 /* Program Notes
  - Finish Nightmode: medium and difficult
+ - How do you center these images
  */
 //Global Variables
 int appWidth, appHeight;
@@ -16,7 +17,7 @@ void setup() {
   appHeight = height;
   //
   //Population
-  // DIV rect() Variable Population
+  //DIV rect() Variable Population
   //Origonal Aspect Ratios of Images to Change
   //Compare the side Lengths to see which is bigger
   //"Compress" the biggest side into the rect()
@@ -117,6 +118,7 @@ void draw() {
   image( bikeForeground, bikeXrect, bikeYrect, bikeWidth, bikeHeight ); //bike image, purpose: see circles in aspect ratio
   //
   rect( darthXrect, darthYrect, darthWidthRect, darthHeightRect ); //Darth Image
+  //NOTE: how would this image be centered or justified (left or right)
   image( darthVaderPortrait, darthXrect, darthYrect, darthWidth, darthHeight ); //Darth Vader in Portrait, geometry is landscape, thus centered
   //
 } //End draw
