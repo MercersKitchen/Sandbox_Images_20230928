@@ -45,6 +45,7 @@ void setup() {
     //memory of smaller side
     bikeWidth = bikeWidthRect;
     bikeHeight = aspectRatio * bikeWidth;
+    //if () {} //ERROR Catch is bikeHeight > bikeHeightRect
     println("BIKE is Landscape");
   } else { //BIKE Image if Portrait
     //Comparison Verification
