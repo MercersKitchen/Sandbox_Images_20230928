@@ -29,16 +29,17 @@ void setup() {
   bikeYrect = appHeight*1/8;
   bikeWidthRect = appWidth*2.25/7;
   bikeHeightRect = appHeight*1/4; // 2/8
-  darthXrect = appHeight*5/8;
-  darthWidthRect = bikeWidth;
-  darthHeightRect = bikeHeight;
+  darthXrect = bikeXrect;
+  darthYrect = appHeight*5/8;
+  darthWidthRect = bikeWidthRect;
+  darthHeightRect = bikeHeightRect;
   //Aspect Ratio Change
-  bikeWidth = 860; //hardcode of image file
-  bikeHeight = 529; //from Image File
-  darthWidth = 352; //from Image File
-  darthHeight = 485; //from Image File
+  bikeWidth = 860.0;//hardcode of image file
+  bikeHeight = 529.0; //from Image File
+  darthWidth = 352.0; //from Image File
+  darthHeight = 485.0; //from Image File
   float aspectRatio = 0.0; //Local Variable
-  float rectDimaensionMemory = 0.0; //Assigned ZERO b/c IF'
+  float rectDimensionMemory = 0.0; //Assigned ZERO b/c IF'
   if ( bikeWidth >= bikeHeight ) { //BIKE Image if Landscape
     //Comparison Verification
     aspectRatio = bikeHeight / bikeWidth; // smaller/large=0 if int, use casting
@@ -76,7 +77,7 @@ void setup() {
     darthHeight = darthHeightRect;
     darthWidth = aspectRatio * darthHeight;
     if ( darthWidth > darthWidthRect ) { //ERROR Catch is darthHeightRect > darthHeight
-    println("ERROR: Aspect Calcualtion Too Big");
+      println("ERROR: Aspect Calcualtion Too Big");
     }
   } //End IF
   //Error Check of Smaller Dimension
@@ -106,8 +107,19 @@ void draw() {
   rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   //
   image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
+  rect( bikeXrect, bikeYrect, bikeWidthRect, bikeHeightRect ); //bike image
   image( bikeForeground, bikeXrect, bikeYrect, bikeWidth, bikeHeight ); //bike image, purpose: see circles in aspect ratio
+  println( bikeForeground, bikeXrect, bikeYrect, bikeWidth, bikeHeight );
+  
+  
+  rect( darthXrect, darthYrect, darthWidthRect, darthHeightRect ); //Darth Image
   image( darthVaderPortrait, darthXrect, darthYrect, darthWidth, darthHeight ); //Darth Vader in Portrait, geometry is landscape, thus centered
+  println(darthVaderPortrait, darthXrect, darthYrect, darthWidth, darthHeight);
+  
+  //
+  
+  
+  //
 } //End draw
 //
 void keyPressed() {
