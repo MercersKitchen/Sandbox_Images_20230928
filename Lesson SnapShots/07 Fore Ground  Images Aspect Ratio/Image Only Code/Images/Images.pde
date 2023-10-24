@@ -51,15 +51,31 @@ void setup() {
     //Comparison Verification
     println("BIKE is Portrait");
     //Repeat Aspect Ratio
+    //Comparison Verification
+    aspectRatio = float(bikeWidth) / float(bikeHeight); // smaller/large=0 if int, use casting
+    //memory of smaller side
+    bikeHeight = bikeHeightRect;
+    bikeWidth = aspectRatio * bikeHeight;
+    //if () {} //ERROR Catch is bikeHeightRect > bikeHeight
   } //End IF
-  if ( darthWidth > darthHeight ) { //DARTH Image if Landscape
+  if ( darthWidth >= darthHeight ) { //DARTH Image if Landscape
     //Comparison Verification
     println("DARTH is Landscape");
     //Repeat Aspect Ratio
+    aspectRatio = float(darthHeight) / float(darthWidth); // smaller/large=0 if int, use casting
+    //memory of smaller side
+    darthWidth = darthWidthRect;
+    darthHeight = aspectRatio * darthWidth;
+    //if () {} //ERROR Catch is bikeHeight > bikeHeightRect
   } else { //DARTH Image if Portrait
     //Comparison Verification
     println("DARTH is Portrait");
     //Repeat Aspect Ratio
+    aspectRatio = float(darthWidth) / float(darthHeight); // smaller/large=0 if int, use casting
+    //memory of smaller side
+    darthHeight = darthHeightRect;
+    darthWidth = aspectRatio * darthHeight;
+    //if () {} //ERROR Catch is darthHeightRect > darthHeight
   } //End IF
   //Error Check of Smaller Dimension
   //
