@@ -4,8 +4,8 @@
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
-float bikeX, bikeY, bikeWidth, bikeHeight;
-float darthX, darthY, darthWidth, darthHeight;
+float bikeXrect, bikeYrect, bikeWidthRect, bikeHeightRect, bikeWidth, bikeHeight;
+float darthXrect, darthYrect, darthWidthRect, darthHeightRect, darthWidth, darthHeight;
 PImage picBackground, bikeForeground, darthVaderPortrait;
 //
 void setup() {
@@ -29,7 +29,7 @@ void setup() {
   bikeYrect = appHeight*1/8;
   bikeWidthRect = appWidth*2.25/7;
   bikeHeightRect = appHeight*1/4; // 2/8
-  darthXrect rect = appHeight*5/8;
+  darthXrect = appHeight*5/8;
   darthWidthRect = bikeWidth;
   darthHeightRect = bikeHeight;
   //Aspect Ratio Change
@@ -41,7 +41,7 @@ void setup() {
   float rectDimaensionMemory = 0.0; //Assigned ZERO b/c IF'
   if ( bikeWidth >= bikeHeight ) { //BIKE Image if Landscape
     //Comparison Verification
-    aspectRatio = float(bikeHeight) / float(bikeWidth); // smaller/large=0 if int, use casting
+    aspectRatio = bikeHeight / bikeWidth; // smaller/large=0 if int, use casting
     //memory of smaller side
     bikeWidth = bikeWidthRect;
     bikeHeight = aspectRatio * bikeWidth;
@@ -52,7 +52,7 @@ void setup() {
     println("BIKE is Portrait");
     //Repeat Aspect Ratio
     //Comparison Verification
-    aspectRatio = float(bikeWidth) / float(bikeHeight); // smaller/large=0 if int, use casting
+    aspectRatio = bikeWidth / bikeHeight; // smaller/large=0 if int, use casting
     //memory of smaller side
     bikeHeight = bikeHeightRect;
     bikeWidth = aspectRatio * bikeHeight;
@@ -62,7 +62,7 @@ void setup() {
     //Comparison Verification
     println("DARTH is Landscape");
     //Repeat Aspect Ratio
-    aspectRatio = float(darthHeight) / float(darthWidth); // smaller/large=0 if int, use casting
+    aspectRatio = darthHeight / darthWidth; // smaller/large=0 if int, use casting
     //memory of smaller side
     darthWidth = darthWidthRect;
     darthHeight = aspectRatio * darthWidth;
@@ -71,11 +71,13 @@ void setup() {
     //Comparison Verification
     println("DARTH is Portrait");
     //Repeat Aspect Ratio
-    aspectRatio = float(darthWidth) / float(darthHeight); // smaller/large=0 if int, use casting
+    aspectRatio = darthWidth / darthHeight; // smaller/large=0 if int, use casting
     //memory of smaller side
     darthHeight = darthHeightRect;
     darthWidth = aspectRatio * darthHeight;
-    //if () {} //ERROR Catch is darthHeightRect > darthHeight
+    if ( darthWidth > darthWidthRect ) { //ERROR Catch is darthHeightRect > darthHeight
+    println("ERROR: Aspect Calcualtion Too Big");
+    }
   } //End IF
   //Error Check of Smaller Dimension
   //
