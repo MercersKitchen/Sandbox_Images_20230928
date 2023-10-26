@@ -125,7 +125,7 @@ void draw() {
       //Empty ELSE
     }
     tint (255, brightnessNumber);
-    //println(brightnessNumber);
+    println(brightnessControl, brightnessNumber);
   }
   //if ( nightmode==true ) tint ( 64, 64, 40 ); //Gray Scale: 1/2 tint (i.e 128/256=1/2)
   if ( nightmode==true ) {
